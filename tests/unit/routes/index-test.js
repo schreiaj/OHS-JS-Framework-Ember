@@ -30,3 +30,10 @@ test('route has proper nav bar', function(assert){
     assert.equal(find('nav .nav-item').length, 2);
   });
 });
+
+test('this route has a patient list', function(assert){
+  visit('/');
+  andThen(function(){
+    assert.ok(find('.patient-list .nav-item'));
+  });
+});
