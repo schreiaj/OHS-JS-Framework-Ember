@@ -1,7 +1,7 @@
 
 # Bmi-tracker
 
-![Travis CI Status](https://travis-ci.org/schreiaj/OHS-JS-Framework-Ember.svg?branch=master)
+[![Build Status](https://travis-ci.org/schreiaj/OHS-JS-Framework-Ember.svg?branch=master)](https://travis-ci.org/schreiaj/OHS-JS-Framework-Ember)
 
 Sample application to load a patient list from a server via FHIR, and compute BMI from various observations on patients. 
 
