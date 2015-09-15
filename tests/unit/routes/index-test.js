@@ -27,6 +27,6 @@ test('route loads properly', function(assert){
 test('route has proper nav bar', function(assert){
   visit('/');
   andThen( function() {
-    assert.equal(find('.nav-item').length, 2);
+    assert.equal(find('nav .nav-item').length, 2);
   });
 });

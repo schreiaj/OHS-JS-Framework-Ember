@@ -27,9 +27,9 @@ test('it exists', function(assert) {
 test('accessing it from the homepage works', function(assert){
   visit('/');
   andThen( function() {
-    assert.equal(find('.nav-item').length, 2);
+    assert.equal(find('nav .nav-item').length, 2);
   });
-  click('.nav-item > a[href="/about"]');
+  click('nav .nav-item > a[href="/about"]');
   andThen( function(){
     findWithAssert('.row:contains("This is a test by Open Health Service (K693) to evaluate various javascript frameworks. All patient data is synthetic.")');
   });
@@ -39,7 +39,7 @@ test('accessing it from the homepage works', function(assert){
 test('there is also a link to go home', function(assert){
   visit('/about');
   andThen(function(){
-    findWithAssert('.nav-item > a[href="/"]');
+    findWithAssert('nav .nav-item > a[href="/"]');
   });
   click('.nav-item > a[href="/"]');
   andThen(function(){
