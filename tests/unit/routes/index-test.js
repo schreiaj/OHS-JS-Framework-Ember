@@ -20,7 +20,7 @@ moduleFor('route:about', 'Unit | Route | index', {
 });
 
 test('route loads properly', function(assert){
-  visit('/')
+  visit('/');
   assert.ok(true);
 });
 
