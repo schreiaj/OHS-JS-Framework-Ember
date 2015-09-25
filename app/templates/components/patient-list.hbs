@@ -1,0 +1,5 @@
+<ul class="nav nav-pills nav-stacked patient-list">
+  {{#each sortedPatients as |patient|}}
+    {{patient-badge patient=patient currentPatient=currentPatient selectPatient="selectPatient"}}
+  {{/each}}
+</ul>

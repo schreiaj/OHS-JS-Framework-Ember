@@ -1,0 +1,5 @@
+<li class="nav-item">
+  {{log currentPatient}}
+  {{#if active}}Foo{{/if}}
+  <a {{action "selectPatient"}} class="nav-link">{{patient.fullName}}</a>
+</li>
