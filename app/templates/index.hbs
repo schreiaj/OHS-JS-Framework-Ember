@@ -1,14 +1,20 @@
 <div class="col-lg-3">
   <h4>Patients <small>(sorted alphabetically)</small></h4>
-  {{patient-list patients=content currentPatient=selectedPatient selectPatient="selectPatient"}}
+  <ul>
+    {{#each sortedPatients as |patient|}}
+      <li>
+        <a {{action "selectPatient" patient}} class="nav-link">{{patient.fullName}}</a>
+      </li>
+    {{/each}}
+  </ul>
 </div>
 <div class="col-xs-9">
-  {{selectedPatient.fullName}}
+
   <h4 class="card-title">BMI Calculations <small>(sorted by date)</small></h4>
+  {{selectedPatient.fullName}}
   <ul>
-    <li>Patient BMI</li>
-    <li>Patient BMI</li>
-    <li>Patient BMI</li>
-    <li>Patient BMI</li>
+    {{#each content.observations as |obs|}}
+      {{obs.id}}
+    {{/each}}
   </ul>
 </div>
