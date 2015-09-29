@@ -12,7 +12,11 @@ export default Ember.Controller.extend({
   }),
   actions: {
       selectPatient: function(patient){
+        if (this.get('selectedPatient')) {
+            this.get('selectedPatient').set('active', false);
+        }
         this.set('selectedPatient', patient);
+        this.set('selectedPatient.active', true);
       }
   }
 });

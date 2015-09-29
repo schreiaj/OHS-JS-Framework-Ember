@@ -29,7 +29,9 @@ import DS from 'ember-data';
 
 
 var Observation = DS.Model.extend({
-
+    isCoded: function(code){
+      return this.get('code.coding').mapBy('code').any((val) => { return val === code;});
+    },
     code: DS.attr(),
     // category: DS.belongsTo('codeable-concept', {embedded: true}),
     valueQuantity: DS.attr(),

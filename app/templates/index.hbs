@@ -1,9 +1,9 @@
 <div class="col-lg-3">
   <h4>Patients <small>(sorted alphabetically)</small></h4>
-  <ul>
+  <ul class="nav nav-pills nav-stacked patient-list">
     {{#each sortedPatients as |patient|}}
       <li>
-        <a {{action "selectPatient" patient}} class="nav-link">{{patient.fullName}}</a>
+        <a {{action "selectPatient" patient}} class="nav-link {{if patient.active 'active'}}">{{patient.fullName}}</a>
       </li>
     {{/each}}
   </ul>
@@ -13,8 +13,8 @@
   <h4 class="card-title">BMI Calculations <small>(sorted by date)</small></h4>
   {{selectedPatient.fullName}}
   <ul>
-    {{#each content.observations as |obs|}}
-      {{obs.id}}
+    {{#each selectedPatient.bmiObservations as |obs|}}
+      <li>{{obs.value}}</li>
     {{/each}}
   </ul>
 </div>
